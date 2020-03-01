@@ -1,4 +1,6 @@
-Copyright (c) 2020, Karina Chichifoi
+MIT License
+
+Copyright (c) 2020 Karina Chichifoi
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation

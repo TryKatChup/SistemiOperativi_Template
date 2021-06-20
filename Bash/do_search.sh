@@ -130,3 +130,25 @@ $$          # id numerico del processo in esecuzione (pid).
 
 shift       # permettere di scorrere gli argomenti del comando bash (non altera $0).
 set         # permette di risettare gli argomenti del comando bash (non altera $0).
+
+
+
+# Count ALL files in a directory AND SUBDIRECTORIES
+
+conta_files=$(find $1 -type f 2> /dev/null | wc -l)
+
+# Count ALL files in a directory NO SUBDIRECTORIES
+
+conta_files=$(find $1 -maxdepth 1 -type f 2> /dev/null | wc -l)
+
+
+#Check if directory exists, if it does delete all the files inside else creates it
+
+if ! [[ -d "$3" ]] ; then
+    mkdir "$3"
+else
+  rm -rf "$3"/*
+fi
+
+# Get first n files from folder sorted by alphabetical order
+ls "$dir" | sort | head -n "$2" >> "$HOME/outfile.txt"

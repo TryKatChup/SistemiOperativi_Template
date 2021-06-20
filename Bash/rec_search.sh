@@ -63,3 +63,16 @@ for dir in "${directories[@]}"; do
     echo "$file"
   done
 done
+
+
+#Operate on all subdirectories and "save" them based on condition (variation of line #25 with code inside)
+directories=()
+while IFS= read -r -d $'\0'; do
+  directories+=("$REPLY")
+done < <(find "$1" -type d -print0)
+for dir in "${directories[@]}"; do
+  conta_files=$(find "$dir" -maxdepth 1 -type f -name "$2*" 2>/dev/null | wc -l)
+  if [ "$conta_files" -gt "$3" ]; then
+    echo "$dir" "$conta_files" >>"$PWD"/esito.out
+  fi
+done

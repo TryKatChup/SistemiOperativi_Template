@@ -150,5 +150,5 @@ else
   rm -rf "$3"/*
 fi
 
-# Get first n files from folder sorted by alphabetical order
+# Get first n elements from folder sorted by alphabetical order
 ls "$dir" | sort | head -n "$2" >> "$HOME/outfile.txt"

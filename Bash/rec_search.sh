@@ -3,7 +3,7 @@ for file in $1/*; do
   if [[ -f "$file" ]]; then
     # Faccio cose
   elif [[ -d "$file" ]]; then
-    echo "Ricorsione nella directories $file"
+    echo "Ricorsione nella directory $file"
     # Chiamata ricorsiva
     "$0" "$file" "$2" "$3"
   fi

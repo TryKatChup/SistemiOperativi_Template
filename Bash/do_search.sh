@@ -51,7 +51,7 @@ shift 2
 
 # Il seguente figlio esegue ogni 1.5 secondi top, e poi viene killato
 top -b > processi.out &
-pidP1=`ps| grep top| cut -d' ' -f2`
+pidP1=`pidof top`
 echo "pidP1 = $pidP1"
 kill -9 $pidP1
 

@@ -151,4 +151,7 @@ else
 fi
 
 # Get first n elements from folder sorted by alphabetical order INCLUDES FOLDERS!!
-ls "$dir" | sort | head -n "$2" >> "$HOME/outfile.txt"
+ls "$dir" | sort | head -n "$2"
+
+# Get first n ONLY FILES from folder sorted by alphabetical order
+find "$dir" -maxdepth 1 -type f -printf "%f\n" | sort | head -n "$2"
